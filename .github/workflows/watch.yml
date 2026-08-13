@@ -9,16 +9,16 @@ name: Cinema City watchdog
 # odvíjí od stavu v state/seen.json, ne od času, takže běh navíc jen zjistí,
 # že se nic nezměnilo, a mlčí. Minuty schválně mimo :00 a :30 a rozprostřené,
 # ať netrefí stejnou špičku.
-on:
-  schedule:
-    - cron: "8,38 * * * *"
-    - cron: "21,51 * * * *"
-  workflow_dispatch:
-    inputs:
-      force_report:
-        description: "Nahlásit všechny aktuální termíny, i už známé"
-        type: boolean
-        default: false
+# on:
+#   schedule:
+#     - cron: "8,38 * * * *"
+#     - cron: "21,51 * * * *"
+#   workflow_dispatch:
+#     inputs:
+#       force_report:
+#         description: "Nahlásit všechny aktuální termíny, i už známé"
+#         type: boolean
+#         default: false
 
 # Stav se commituje zpátky do repa — souběžné běhy by si přepsaly commit.
 concurrency:
