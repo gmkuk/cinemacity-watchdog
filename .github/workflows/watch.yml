@@ -18,7 +18,7 @@ on:
       force_report:
         description: "Nahlásit všechny aktuální termíny, i už známé"
         type: boolean
-        default: false
+        default: true
 
 # Stav se commituje zpátky do repa — souběžné běhy by si přepsaly commit.
 concurrency:
@@ -45,7 +45,7 @@ jobs:
         # Chceš hlídat jiný film nebo jiný typ sálu? Přepiš tyhle dvě hodnoty
         # a smaž state/seen.json (jinak se nový výběr porovná se starým stavem).
         env:
-          FILM_PATTERN: odyss
+          FILM_PATTERN: dun
           AUDITORIUM_PATTERN: imax
         run: |
           python3 watch.py \
